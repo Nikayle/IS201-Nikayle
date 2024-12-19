@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Riddle Generator</title>
+    <link rel="stylesheet" href="App.css">
+</head>
+<body>
+<a href="Fromscratch.html" target="_self">Back to my Scratch Page</a>
+<div class="container">
+    <h1>AI-Powered Riddle Generator</h1>
+    <p class="riddle" id="riddleText"></p>
+
+    <input type="text" id="userAnswer" placeholder="Type your answer here..." />
+    <button onclick="checkAnswer()">Submit Answer</button>
+
+    <p class="response" id="responseText"></p>
+    <p class="feedback" id="feedbackText"></p>
+</div>
+
+<script>
+    // Array of riddles with their answers
+    const riddles = [
+        {
+            question: "What has keys but can't open locks?",
+            answer: "piano",
+            feedback: ["Keep playing those keys!", "Guess you're musically inclined!", "Nice try, but it's a bit off key."]
+        },
+        {
+            question: "I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?",
+            answer: "echo",
+            feedback: ["Echoes are powerful!", "You've got a sharp ear!", "So close... but no echo!"]
+        },
+        {
+            question: "The more of this there is, the less you see. What is it?",
+            answer: "darkness",
+            feedback: ["Keep the lights on, maybe?", "A shadowy answer! Well done!", "Not quite. It's hard to see in the dark."]
+        },
+        {
+            question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
+            answer: "the letter m",
+            feedback: ["Well, that was a tricky one!", "You got it! The letter M!", "Hmm, it's the letter M."]
+        }
+    ];
+
+    // Function to generate a random riddle
+    function generateRiddle() {
+        const randomIndex = Math.floor(Math.random() * riddles.length);
+        const selectedRiddle = riddles[randomIndex];
+        document.getElementById('riddleText').innerText = selectedRiddle.question;
+        document.getElementById('responseText').innerText = '';
+        document.getElementById('feedbackText').innerText = '';
+        document.getElementById('userAnswer').value = '';
+        return selectedRiddle;
+    }
+
+    let currentRiddle = generateRiddle();
+
+    // Function to check user's answer
+    function checkAnswer() {
+        const userAnswer = document.getElementById('userAnswer').value.trim().toLowerCase();
+        const correctAnswer = currentRiddle.answer.toLowerCase();
+
+        if (userAnswer === correctAnswer) {
+            document.getElementById('responseText').innerText = "Correct!";
+            document.getElementById('responseText').className = "response correct";
+            document.getElementById('feedbackText').innerText = currentRiddle.feedback[0];
+        } else {
+            document.getElementById('responseText').innerText = "Incorrect!";
+            document.getElementById('responseText').className = "response incorrect";
+            document.getElementById('feedbackText').innerText = currentRiddle.feedback[1];
+        }
+
+        // Set up next riddle
+        setTimeout(() => {
+            currentRiddle = generateRiddle();
+        }, 3000); // Change riddle after 3 seconds
+    }
+</script>
+
+</body>
+</html>

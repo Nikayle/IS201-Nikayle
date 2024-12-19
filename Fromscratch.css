@@ -1,0 +1,133 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling for body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1e8de; /* Custom background color */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header styling */
+header {
+    background-color: #2d8a5d; /* Green background for the header */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2d8a5d;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #000;
+}
+
+/* Main content styling */
+main {
+    margin-top: 20px;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #2d8a5d;
+}
+
+/* Ordered and Unordered List styling */
+ol {
+    margin-left: 20px;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Gallery styling for images */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 300px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Quote styling */
+.quote {
+    background-color: #ffffff;
+    padding: 15px;
+    border-left: 5px solid #2d8a5d;
+    margin: 10px 0;
+    font-style: italic;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+footer a {
+    color: #2d8a5d;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Iframe for Tableau */
+iframe {
+    border: none;
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    margin: 20px 0;
+}
